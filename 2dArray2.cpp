@@ -6,11 +6,11 @@
         std::cout<<"Enter number of student: ";
         std::cin>> student;
 
-        int** reportsheet= new int*[student];
+        int** reportcard= new int*[student];
 
         //create column
         for(int i=0; i<subject; i++){
-        reportsheet[i]= new int[subject];
+        reportcard[i]= new int[subject];
         }
 
         // input mark
@@ -18,7 +18,7 @@
             std::cout<<"Enter mark for student "<<i+1<<": ";
             for(int j=0; j<subject; j++){
             std::cout << "subject "<<j+1<<": ";
-            std::cin>>reportsheet[i][j];
+            std::cin>>reportcard[i][j];
             }
         }
 
@@ -30,7 +30,7 @@
                 int sum =0.0;
 
                 for(int j=0; j< subject; j++){
-                    sum = sum + reportsheet[i][j];
+                    sum = sum + reportcard[i][j];
 
                 }
                 double average = sum/3;
@@ -40,9 +40,9 @@
             // free memory
 
             for (int i=0; i<student; i++){
-                delete[] reportsheet[i];
+                delete[] reportcard[i];
             }
-            delete[] reportsheet;
+            delete[] reportcard;
 
 
         return 0;
